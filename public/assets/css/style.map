@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"../../../../../../Users/Victorien/Documents/Perso/prog/initiationCI/style.scss"
+	],
+	"sourcesContent": [
+		"*{\r\n    position: relative;\r\n    margin: 0;\r\n    padding: 0;\r\n    font-size: 30px;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    box-sizing: border-box;\r\n    outline: none;\r\n}\r\n\r\n//Ordinateur\r\n.row {\r\n    width: 75%;\r\n    margin: 175px auto;\r\n    div {\r\n        display: inline-block;\r\n        vertical-align: top;\r\n    }\r\n}\r\n.w-1 { width : 7.3%; }\r\n.w-2 { width : 15.6%; }\r\n.w-3 { width : 24%; }\r\n.w-4 { width : 32.3%; }\r\n.w-5 { width : 40.6%; }\r\n.w-6 { width : 49%; }\r\n.w-7 { width : 57.3%; }\r\n.w-8 { width : 65.6%; }\r\n.w-9 { width : 74%; }\r\n.w-10 { width : 82.3%; }\r\n.w-11 { width : 90.6%; }\r\n.w-12 { width : 99%; }"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,CAAC,CAAA;EACG,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,4BAA4B;EACzC,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;CAChB;;;AAGD,AAAA,IAAI,CAAC;EACD,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,UAAU;CAKrB;;;AAPD,AAGI,IAHA,CAGA,GAAG,CAAC;EACA,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,GAAG;CACtB;;;AAEL,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,IAAI;CAAI;;;AACvB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACxB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,GAAG;CAAI;;;AACtB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACxB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACxB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,GAAG;CAAI;;;AACtB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACxB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACxB,AAAA,IAAI,CAAC;EAAE,KAAK,EAAG,GAAG;CAAI;;;AACtB,AAAA,KAAK,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACzB,AAAA,KAAK,CAAC;EAAE,KAAK,EAAG,KAAK;CAAI;;;AACzB,AAAA,KAAK,CAAC;EAAE,KAAK,EAAG,GAAG;CAAI"
+}

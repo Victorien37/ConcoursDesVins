@@ -1,0 +1,84 @@
+/* line 1, ../Perso/prog/initiationCI/style.scss */
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* line 12, ../Perso/prog/initiationCI/style.scss */
+.row {
+  width: 75%;
+  margin: 175px auto;
+}
+
+/* line 15, ../Perso/prog/initiationCI/style.scss */
+.row div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 20, ../Perso/prog/initiationCI/style.scss */
+.w-1 {
+  width: 7.3%;
+}
+
+/* line 21, ../Perso/prog/initiationCI/style.scss */
+.w-2 {
+  width: 15.6%;
+}
+
+/* line 22, ../Perso/prog/initiationCI/style.scss */
+.w-3 {
+  width: 24%;
+}
+
+/* line 23, ../Perso/prog/initiationCI/style.scss */
+.w-4 {
+  width: 32.3%;
+}
+
+/* line 24, ../Perso/prog/initiationCI/style.scss */
+.w-5 {
+  width: 40.6%;
+}
+
+/* line 25, ../Perso/prog/initiationCI/style.scss */
+.w-6 {
+  width: 49%;
+}
+
+/* line 26, ../Perso/prog/initiationCI/style.scss */
+.w-7 {
+  width: 57.3%;
+}
+
+/* line 27, ../Perso/prog/initiationCI/style.scss */
+.w-8 {
+  width: 65.6%;
+}
+
+/* line 28, ../Perso/prog/initiationCI/style.scss */
+.w-9 {
+  width: 74%;
+}
+
+/* line 29, ../Perso/prog/initiationCI/style.scss */
+.w-10 {
+  width: 82.3%;
+}
+
+/* line 30, ../Perso/prog/initiationCI/style.scss */
+.w-11 {
+  width: 90.6%;
+}
+
+/* line 31, ../Perso/prog/initiationCI/style.scss */
+.w-12 {
+  width: 99%;
+}
+
+/*# sourceMappingURL=style.css.map */
