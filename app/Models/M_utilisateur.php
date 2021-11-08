@@ -22,4 +22,6 @@ class M_utilisateur extends \CodeIgniter\Model {
                 ->get()
                 ->getResult();
     }
+    
+    
 }

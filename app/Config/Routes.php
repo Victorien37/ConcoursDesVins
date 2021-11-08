@@ -43,6 +43,9 @@ $routes->add('Privee', 'C_authentifiee', ['filter' => 'Auth']);
 $routes->add('Connexion', 'C_connexion');
 $routes->add('Utilisateur', 'Entrainement/C_utilisateur::consultationUtilisateur', ['filter' => 'Auth']);
 $routes->add('Privilege', 'C_privilege', ['filter' => 'Auth']);
+$routes->add('SaisirNotes', 'C_saisir_notes', ['filter' => 'Auth']);
+$routes->add('ConsulterNotes', 'C_consulter_notes', ['filter' => 'Auth']);
+$routes->add('ListeProducteur', 'Entrainement/Ajax/C_ajax::utilisateursProducteur', ['filter'=>'auth']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
