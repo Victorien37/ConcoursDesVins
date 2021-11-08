@@ -39,6 +39,18 @@
                     ?>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <?php
+                            if (session()->get('president') == 1) {
+                                ?>
+                                <span class="bi bi-person-fill">Président</span>
+                                <?php
+                            } else if (session()->get('president') == 0) {
+                                echo session()->get('prenom') . ' ' . session()->get('username');
+                                ?>
+                                <span class="bi bi-person-fill"></span>
+                                <?php
+                            }
+                            ?>
                             <a href="<?= site_url('SaisirNotes') ?>"><span class="bi bi-file-earmark-plus-fill">Saisir mes notes</span></a>
                         </li>
                     </ul>
