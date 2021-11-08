@@ -35,8 +35,33 @@
                 ?>
                 <div class="collapse navbar-collapse" id="menu-sio">
                     <?php
-                    if(session()->get('president') == 0) {
-                    ?>
+                    if (session()->get('president') == 1) {
+                        ?>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="<?= site_url('OuvrirConcours') ?>"><span class="bi bi-plus-circle"> Ouvrir le concours</span></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="<?= site_url('ConsulterNotes') ?>"><span class="bi bi-card-list"> Consulter les notes</span></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="<?= site_url('CloturerConcours') ?>"><span class="bi bi-x"> Clôturer le concours</span></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="<?= site_url('AfficherCompteRendu') ?>"><span class="bi bi-chat-right-text"> Afficher le compte-rendu</span></a>
+                            </li>
+                        </ul>
+                        <?php
+                    } else if (session()->get('president') == 0) {
+                        ?>
+                    <?php } ?>
+                    </li>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <?php
@@ -53,25 +78,20 @@
                             ?>
                             <a href="<?= site_url('SaisirNotes') ?>"><span class="bi bi-file-earmark-plus-fill">Saisir mes notes</span></a>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a href="<?= site_url('ConsulterNotes') ?>"><span class="bi bi-file-earmark-medical-fill">Consulter mes notes</span></a>
                         </li>
                     </ul>
                     <?php
-                    }
-                    ?>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <span class="bi-person-fill"><?= session()->get('prenom') . ' ' . session()->get('username') ?></span>
-                            <a href="<?= site_url('Logout'); ?>"><span class="bi bi-box-arrow-right">se déconnecter</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <?php
-            }
-            ?>
+                }
+                ?>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <span class="bi-person-fill"><?= session()->get('prenom') . ' ' . session()->get('username') ?></span>
+                        <a href="<?= site_url('Logout'); ?>"><span class="bi bi-box-arrow-right">se déconnecter</span></a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
     </nav>
