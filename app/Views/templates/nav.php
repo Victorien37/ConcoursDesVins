@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="menu-sio">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="<?php echo site_url('Login'); ?>"><span class="bi-person-fill">se connecter</span></a>
+                            <a href="<?php echo site_url('Login'); ?>"><span class="bi bi-box-arrow-in-right">se connecter</span></a>
                         </li>
                     </ul>
                 </div>
@@ -34,23 +34,26 @@
             } else {
                 ?>
                 <div class="collapse navbar-collapse" id="menu-sio">
+                    <?php
+                    if(session()->get('president') == 0) {
+                    ?>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <?php
-                            if (session()->get('president') == 1) {
-                            ?>
-                            <a href="<?= site_url('President') ?>"><span class="bi bi-star-fill">Président</span></a>
-                            <?php
-                            } else if (session()->get('president') == 0) {
-                            ?>
-                            <a href="<?= site_url('Jury') ?>"><span class="bi bi-star-half">Jury</span></a>
-                            <?php } ?>
+                            <a href="<?= site_url('SaisirNotes') ?>"><span class="bi bi-file-earmark-plus-fill">Saisir mes notes</span></a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <?php echo session()->get('prenom') . ' ' . session()->get('username') ?>
-                            <a href="<?php echo site_url('Logout'); ?>"><span class="bi-person-fill">se déconnecter</span></a>
+                            <a href="<?= site_url('ConsulterNotes') ?>"><span class="bi bi-file-earmark-medical-fill">Consulter mes notes</span></a>
+                        </li>
+                    </ul>
+                    <?php
+                    }
+                    ?>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <span class="bi-person-fill"><?= session()->get('prenom') . ' ' . session()->get('username') ?></span>
+                            <a href="<?= site_url('Logout'); ?>"><span class="bi bi-box-arrow-right">se déconnecter</span></a>
                         </li>
                     </ul>
                 </div>
