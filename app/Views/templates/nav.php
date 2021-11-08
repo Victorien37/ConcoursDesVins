@@ -5,7 +5,7 @@
         'alt' => 'logo concours des vins (raisin)',
         'class' => 'img-thumbnail',
         'width' => '100',
-        'hight' => '62',
+        'height' => '62',
         'title' => 'logo',
     ];
     ?> 
