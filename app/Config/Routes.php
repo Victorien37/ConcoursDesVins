@@ -55,7 +55,7 @@ $routes->add('InsertionOK', 'C_InsertionOK');
 $routes->add('InsertionFail', 'C_InsertionFail');
 
 /***********************************JURY***************************************/
-$routes->add('SaisirNotes', 'Jury/C_saisirNotes', ['filter' => 'Auth']);
+$routes->add('SaisirNotes', 'Jury\C_saisirNotes', ['filter' => 'Auth']);
 $routes->add('ConsulterNotesJury', 'C_consulterNotesJury', ['filter' => 'Auth']);
 $routes->add('ListeProducteur', 'Ajax\C_ajaxVin::utilisateursProducteur', ['filter'=>'auth']);
 
