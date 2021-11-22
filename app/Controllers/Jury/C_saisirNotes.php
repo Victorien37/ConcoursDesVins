@@ -11,19 +11,19 @@ namespace App\Controllers;
  *
  * @author Victorien
  */
-class C_saisir_notes extends BaseController {
+class C_saisirNotes extends BaseController {
     public function index() {
         
         $m_producteur = model('App\Models\M_producteur');
         //On appel la méthode du modele pour récupérer la liste des privilèges
         $data['listeProducteur'] = $m_producteur->getListeProducteur();
-        return view('pages/entrainement/v_liste_vin', $data);
+        return view('pages/Jury/v_saisirNotes', $data);
     }
     
     public function vin() {
         $m_vin = model('App\Models\M_vin');
         //On appel la méthode du modele pour récupérer la liste des privilèges
         $data['listeVin'] = $m_vin->getListeVin();
-        return view('pages/entrainement/v_liste_vin', $data);
+        return view('pages/Jury/v_saisirNotes', $data);
     }
 }

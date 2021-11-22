@@ -22,6 +22,9 @@
             ?>
         </div>
         <div class="row">
+            <select class="form-control col-md-3" name="liste" id="liste" >
+                <option value="-1">Sélectionnez un vins...</option>
+            </select>  
             <div id="liste" class="border col-md-5 offset-md-1">
                 <?php
                     $att_Vin = array(
@@ -38,11 +41,44 @@
     </div>
 </div>
 <script type="text/javascript">
+
+        $(function () {
+
+            $('#listeProducteur').change(function () {
+
+
+                var leProducteur = $(this).val();
+                $.ajax({
+                    url: "<?= site_url('ListeProducteur'); ?>",
+
+                    method: "POST",
+                    data: {producteur: leProducteur},
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#liste').empty();
+
+                        $.each(data, function (key, value) {
+                            var vins = document.createElement('span');
+                            vins.textContent = value.nomCommercial + " " + value.couleur + " " + value.millesime;
+                            $('#liste').append('<option value="' + value.id + '">' + value.millesime + " " + value.couleur + " " + value.nomCommercial + '</option>');
+                        }
+                        );
+
+                    },
+                    error: function () {
+                        alert('les données ne sont pas disponible');
+                    }
+                });
+            });
+        });
+</script>
+
+<!--<script type="text/javascript">
     $(function() {
         $('#listeProducteur').change(function() {
             var leproducteur = $(this).val();
             $.ajax({
-                url: "<?= site_url('ListeProducteur'); ?>",
+                url: "<? site_url('ListeProducteur'); ?>",
                 method: "POST",
                 data: {producteur: leproducteur},
                 dataType: 'json',
@@ -59,6 +95,6 @@
             });
         });
     });
-</script>
+</script>-->
 </body>
 </html>

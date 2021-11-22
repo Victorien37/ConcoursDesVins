@@ -34,26 +34,31 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'C_accueil::index');
 
-//Route concernant tout les utilisateurs
+/*******************Route concernant tout les utilisateurs*********************/
 $routes->add('Accueil', 'C_accueil');
 $routes->add('Login', 'C_accueil::login');
 $routes->add('Logout', 'C_accueil::logout');
-$routes->add('Public', 'C_public');
-$routes->add('Privee', 'C_authentifiee', ['filter' => 'Auth']);
 $routes->add('Connexion', 'C_connexion');
-$routes->add('Utilisateur', 'Entrainement/C_utilisateur::consultationUtilisateur', ['filter' => 'Auth']);
+
+//$routes->add('Public', 'C_public');
+//$routes->add('Utilisateur', 'Entrainement/C_utilisateur::consultationUtilisateur', ['filter' => 'Auth']);
+//$routes->add('Privilege', 'C_privilege', ['filter' => 'Auth']);
+//$routes->add('Privee', 'C_authentifiee', ['filter' => 'Auth']);
+
+/*********************************PRESIDENT************************************/
 $routes->add('OuvrirConcours', 'C_ouvrirConcours');
-$routes->add('ConsulterNotes','C_consulterNotes');
+$routes->add('ConsulterNotesPresident','C_consulterNotesPresident');
 $routes->add('CloturerConcours','C_cloturerConcours');
 $routes->add('AfficherCompteRendu','C_compteRendu');
-$routes->add('AjaxOuvrirConcours', 'C_ajaxOuvrirConcours');
-$routes->add('AjaxOuvrirConcours', 'C_ajaxOuvrirConcours');
+$routes->add('AjaxOuvrirConcours', 'Ajax\C_ajaxOuvrirConcours');
 $routes->add('InsertionOK', 'C_InsertionOK');
 $routes->add('InsertionFail', 'C_InsertionFail');
-$routes->add('Privilege', 'C_privilege', ['filter' => 'Auth']);
-$routes->add('SaisirNotes', 'C_saisir_notes', ['filter' => 'Auth']);
-$routes->add('ConsulterNotes', 'C_consulter_notes', ['filter' => 'Auth']);
-$routes->add('ListeProducteur', 'Entrainement/Ajax/C_ajax::utilisateursProducteur', ['filter'=>'auth']);
+
+/***********************************JURY***************************************/
+$routes->add('SaisirNotes', 'Jury/C_saisirNotes', ['filter' => 'Auth']);
+$routes->add('ConsulterNotesJury', 'C_consulterNotesJury', ['filter' => 'Auth']);
+$routes->add('ListeProducteur', 'Ajax\C_ajaxVin::utilisateursProducteur', ['filter'=>'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

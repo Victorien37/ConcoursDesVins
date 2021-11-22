@@ -24,12 +24,18 @@ class M_vin extends \CodeIgniter\Model {
     public function getListeVin() {
         $db = \Config\Database::connect();
         return $db->table($this->table)
-                ->select('nomProducteur', 'nomAppellation', 'nomCommercial', 'couleur')
-                ->join('vin', 'appellation', 'idAppellation' == 'id')
-                ->join('vin', 'producteur', 'idProducteur' == 'id')
-                ->where('nomProducteur', $this->getListeProducteur())
-                ->distinct()
+                ->select('id, nomCommercial, idMedaille, millesime ,couleur')
+                ->where('idProducteur', $id)
+                ->orderBy('id')
                 ->get()
                 ->getResult();
+        
+//                ->select('nomProducteur', 'nomAppellation', 'nomCommercial', 'couleur')
+//                ->join('vin', 'appellation', 'idAppellation' == 'id')
+//                ->join('vin', 'producteur', 'idProducteur' == 'id')
+//                ->where('nomProducteur', $this->getListeProducteur())
+//                ->distinct()
+//                ->get()
+//                ->getResult();
     }
 }
