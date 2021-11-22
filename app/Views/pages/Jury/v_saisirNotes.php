@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
         $(function () {
 
@@ -49,7 +49,7 @@
 
                 var leProducteur = $(this).val();
                 $.ajax({
-                    url: "<?= site_url('ListeProducteur'); ?>",
+                    url: "<? site_url('ListeProducteur'); ?>",
 
                     method: "POST",
                     data: {producteur: leProducteur},
@@ -71,9 +71,9 @@
                 });
             });
         });
-</script>
+</script>-->
 
-<!--<script type="text/javascript">
+<script type="text/javascript">
     $(function() {
         $('#listeProducteur').change(function() {
             var leproducteur = $(this).val();
@@ -95,6 +95,6 @@
             });
         });
     });
-</script>-->
+</script>
 </body>
 </html>

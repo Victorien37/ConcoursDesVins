@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Controllers\Entrainement\Ajax;
+namespace App\Controllers\Ajax;
 
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
 
 /**
  * Controleur qui va gérer les action ajax d'un utilisateur
  */
-class C_ajax_vin extends Controller {
+class C_ajaxVin extends Controller {
     
     /**
      * Demande au modele M_utilisateur d'exécuter la fonction

@@ -67,7 +67,7 @@
                         </ul>
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a href="<?= site_url('ConsulterNotes') ?>"><span class="bi bi-file-earmark-medical-fill">Consulter mes notes</span></a>
+                                <a href="<?= site_url('ConsulterNotesJury') ?>"><span class="bi bi-file-earmark-medical-fill">Consulter mes notes</span></a>
                             </li>
                         </ul>
                     <?php }

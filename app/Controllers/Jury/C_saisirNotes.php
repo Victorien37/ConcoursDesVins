@@ -5,9 +5,10 @@
  * and open the template in the editor.
  */
 
-namespace App\Controllers;
+namespace App\Controllers\Jury;
+use App\Controllers\BaseController;
 /**
- * Description of C_consulter_notes
+ * Description of C_saisirNotes
  *
  * @author Victorien
  */
@@ -20,10 +21,10 @@ class C_saisirNotes extends BaseController {
         return view('pages/Jury/v_saisirNotes', $data);
     }
     
-    public function vin() {
-        $m_vin = model('App\Models\M_vin');
-        //On appel la méthode du modele pour récupérer la liste des privilèges
-        $data['listeVin'] = $m_vin->getListeVin();
-        return view('pages/Jury/v_saisirNotes', $data);
-    }
+//    public function vin() {
+//        $m_vin = model('App\Models\M_vin');
+//        //On appel la méthode du modele pour récupérer la liste des privilèges
+//        $data['listeVin'] = $m_vin->getListeVin();
+//        return view('pages/Jury/v_saisirNotes', $data);
+//    }
 }

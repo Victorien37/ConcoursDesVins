@@ -6,15 +6,16 @@
  * and open the template in the editor.
  */
 
-namespace App\Controllers;
+namespace App\Controllers\Jury;
+use App\Controllers\BaseController;
 
 /**
- * Description of C_consulter_notes
+ * Description of C_consulterNotes
  *
  * @author Victorien
  */
-class C_consulter_notes extends BaseController {
+class C_consulterNotesJury extends BaseController {
     public function index() {
-        echo view('pages/v_consulter');
+        echo view('pages/Jury/v_consulterNotesJury');
     }
 }

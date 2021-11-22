@@ -40,24 +40,20 @@ $routes->add('Login', 'C_accueil::login');
 $routes->add('Logout', 'C_accueil::logout');
 $routes->add('Connexion', 'C_connexion');
 
-//$routes->add('Public', 'C_public');
-//$routes->add('Utilisateur', 'Entrainement/C_utilisateur::consultationUtilisateur', ['filter' => 'Auth']);
-//$routes->add('Privilege', 'C_privilege', ['filter' => 'Auth']);
-//$routes->add('Privee', 'C_authentifiee', ['filter' => 'Auth']);
 
 /*********************************PRESIDENT************************************/
-$routes->add('OuvrirConcours', 'C_ouvrirConcours');
-$routes->add('ConsulterNotesPresident','C_consulterNotesPresident');
-$routes->add('CloturerConcours','C_cloturerConcours');
-$routes->add('AfficherCompteRendu','C_compteRendu');
-$routes->add('AjaxOuvrirConcours', 'Ajax\C_ajaxOuvrirConcours');
-$routes->add('InsertionOK', 'C_InsertionOK');
-$routes->add('InsertionFail', 'C_InsertionFail');
+$routes->add('OuvrirConcours', 'President/C_ouvrirConcours');
+$routes->add('ConsulterNotesPresident','President/C_consulterNotesPresident');
+$routes->add('CloturerConcours','President/C_cloturerConcours');
+$routes->add('AfficherCompteRendu','President/C_compteRendu');
+$routes->add('AjaxOuvrirConcours', 'Ajax/C_ajaxOuvrirConcours');
+$routes->add('InsertionOK', 'President/C_InsertionOK');
+$routes->add('InsertionFail', 'President/C_InsertionFail');
 
 /***********************************JURY***************************************/
-$routes->add('SaisirNotes', 'Jury\C_saisirNotes', ['filter' => 'Auth']);
-$routes->add('ConsulterNotesJury', 'C_consulterNotesJury', ['filter' => 'Auth']);
-$routes->add('ListeProducteur', 'Ajax\C_ajaxVin::utilisateursProducteur', ['filter'=>'auth']);
+$routes->add('SaisirNotes', 'Jury/C_saisirNotes', ['filter' => 'Auth']);
+$routes->add('ListeProducteur', 'Ajax/C_ajaxVin::utilisateursProducteur', ['filter'=>'Auth']);
+$routes->add('ConsulterNotesJury', 'Jury/C_consulterNotesJury', ['filter' => 'Auth']);
 
 /*
  * --------------------------------------------------------------------
