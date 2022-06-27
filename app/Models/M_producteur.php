@@ -26,8 +26,8 @@ class M_producteur extends \CodeIgniter\Model {
     public function getListeProducteur() {
         $db = \Config\Database::connect();
         return $db->table($this->table)
-                ->select('nomProducteur')
-                ->distinct()
+                ->select('id, nomProducteur')
+//                ->distinct()
                 ->get()
                 ->getResult();
     }

@@ -21,21 +21,13 @@ class M_vin extends \CodeIgniter\Model {
      * 
      * @return type
      */
-    public function getListeVin() {
+    public function getListeVin($id) {
         $db = \Config\Database::connect();
         return $db->table($this->table)
-                ->select('id, nomCommercial, idMedaille, millesime ,couleur')
+                ->select('id, nomCommercial, couleur')
                 ->where('idProducteur', $id)
                 ->orderBy('id')
                 ->get()
                 ->getResult();
-        
-//                ->select('nomProducteur', 'nomAppellation', 'nomCommercial', 'couleur')
-//                ->join('vin', 'appellation', 'idAppellation' == 'id')
-//                ->join('vin', 'producteur', 'idProducteur' == 'id')
-//                ->where('nomProducteur', $this->getListeProducteur())
-//                ->distinct()
-//                ->get()
-//                ->getResult();
     }
 }

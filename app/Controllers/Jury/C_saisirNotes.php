@@ -16,8 +16,13 @@ class C_saisirNotes extends BaseController {
     public function index() {
         
         $m_producteur = model('App\Models\M_producteur');
+        $m_vin = model('App\Models\M_vin');
         //On appel la méthode du modele pour récupérer la liste des privilèges
         $data['listeProducteur'] = $m_producteur->getListeProducteur();
+        // $vins = $m_vin->getListeVin();
+        // foreach ($vins as $vin) {
+        //     echo $vin->nomCommercial;
+        // }
         return view('pages/Jury/v_saisirNotes', $data);
     }
     

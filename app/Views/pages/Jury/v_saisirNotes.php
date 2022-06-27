@@ -1,8 +1,9 @@
 <div class="container">
     <h2 class="text-center">Saisir des notes</h2>
-    <div class="form-row">
-        <div class="row">
-            <label for="listeProducteur" class="col-12">Liste des producteur : </label>
+    <form>
+        <!--Liste des producteurs-->
+        <div class="form-group">
+            <label for="listeProducteur" class="col-12">Liste des producteurs : </label>
             <?php
             $att_select = array(
                 'class' => 'form-control col-6',
@@ -11,90 +12,69 @@
             $options = array();
             $options[-1] = "Sélectionner un producteur";
             foreach ($listeProducteur as $producteur) {
-                $options[$producteur->nomProducteur] = $producteur->nomProducteur;
+                $options[$producteur->id] = $producteur->nomProducteur;
             }
-            // Ordre des paramètres :
-            // Nom de la liste,
-            // Tableau des options,
-            // Valeur selectionnée et paramètres supplémentaires
             echo form_dropdown('producteur', $options, '', $att_select);
             
             ?>
         </div>
-        <div class="row">
-            <select class="form-control col-md-3" name="liste" id="liste" >
-                <option value="-1">Sélectionnez un vins...</option>
-            </select>  
-            <div id="liste" class="border col-md-5 offset-md-1">
-                <?php
-                    $att_Vin = array(
-                        'class' => 'form-control col-6',
-                        'id' => 'listeVin'
-                    );
-                    $opt = array();
-                    $opt[-1] = "Selectionner un vin";
-                    
-                    echo form_dropdown('vin', $opt, '', $att_Vin);
-                ?>
-            </div>
+
+        <!--Liste des vins-->
+        <div class="form-group">
+            <label for="listeVin" class="col-12">Vins :</label>
+            <select class="form-control col-md-6" name="listeVin" id="listeVin" >
+                <option value="-1">Sélectionnez un vin...</option>
+            </select>
         </div>
-    </div>
+
+        <!--Saisie de la note-->
+        <div class="form-group">
+            <label for="note" class="col-12">Note :*</label>
+            <?php
+                $note = [
+                    'class' => 'form-control col-md-6',
+                    'type' => 'number',
+                    'name' => 'note',
+                    'min' => '0',
+                    'max' => '100',
+                    'required' => 'required',
+                    'placeholder' => ' / 100'
+                ];
+                echo form_input($note);
+            ?>
+        </div>
+
+        <div class="form-group">
+            <?php
+                $submit = [
+                    'class' => 'btn btn-outline-primary',
+                ];
+                echo form_submit('btn_valider', 'Envoyer', $submit);
+            ?>
+        </div>
+    </form>
 </div>
-<!--<script type="text/javascript">
-
+<script type="text/javascript">
         $(function () {
-
             $('#listeProducteur').change(function () {
-
-
                 var leProducteur = $(this).val();
                 $.ajax({
-                    url: "<? site_url('ListeProducteur'); ?>",
-
+                    url: "<?= site_url('ListeProducteur'); ?>",
                     method: "POST",
-                    data: {producteur: leProducteur},
+                    data: {id: leProducteur},
                     dataType: 'json',
                     success: function (data) {
-                        $('#liste').empty();
-
+                        $('#listeVin').empty();
                         $.each(data, function (key, value) {
-                            var vins = document.createElement('span');
-                            vins.textContent = value.nomCommercial + " " + value.couleur + " " + value.millesime;
-                            $('#liste').append('<option value="' + value.id + '">' + value.millesime + " " + value.couleur + " " + value.nomCommercial + '</option>');
-                        }
-                        );
-
+                            $('#listeVin').append('<option value="' + value.id + '">' + value.nomCommercial + ' ' + value.couleur + '</option>');
+                        });
                     },
                     error: function () {
-                        alert('les données ne sont pas disponible');
+                        alert('les données ne sont pas disponible ! 👿');
                     }
                 });
             });
         });
-</script>-->
-
-<script type="text/javascript">
-    $(function() {
-        $('#listeProducteur').change(function() {
-            var leproducteur = $(this).val();
-            $.ajax({
-                url: "<? site_url('ListeProducteur'); ?>",
-                method: "POST",
-                data: {producteur: leproducteur},
-                dataType: 'json',
-                success: function(data) {
-                    $('#listeVin').empty();
-                    $.each(data, function(key, value) {
-                        var Text = document.createTextNode(value.nomProducteur);
-                        $('#listeVin').append("<option value='" + value.idAppelation + "'>" + value.nomCommercial + "</option>");
-                    });
-                },
-                error: function() {
-                    alert('Les données ne sont pas disponibles ! 👿');
-                }
-            });
-        });
-    });
 </script>
 </body>
 </html>

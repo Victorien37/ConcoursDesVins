@@ -42,18 +42,18 @@ $routes->add('Connexion', 'C_connexion');
 
 
 /*********************************PRESIDENT************************************/
-$routes->add('OuvrirConcours', 'President/C_ouvrirConcours');
-$routes->add('ConsulterNotesPresident','President/C_consulterNotesPresident');
-$routes->add('CloturerConcours','President/C_cloturerConcours');
-$routes->add('AfficherCompteRendu','President/C_compteRendu');
-$routes->add('AjaxOuvrirConcours', 'Ajax/C_ajaxOuvrirConcours');
-$routes->add('InsertionOK', 'President/C_InsertionOK');
-$routes->add('InsertionFail', 'President/C_InsertionFail');
+$routes->add('OuvrirConcours', 'President/C_ouvrirConcours::index');
+$routes->add('ConsulterNotesPresident','President/C_consulterNotesPresident::index');
+$routes->add('CloturerConcours','President/C_cloturerConcours::index');
+$routes->add('AfficherCompteRendu','President/C_compteRendu::index');
+$routes->add('AjaxOuvrirConcours', 'Ajax/C_ajaxOuvrirConcours::index');
+$routes->add('InsertionOK', 'President/C_InsertionOK::index');
+$routes->add('InsertionFail', 'President/C_InsertionFail::index');
 
 /***********************************JURY***************************************/
-$routes->add('SaisirNotes', 'Jury/C_saisirNotes', ['filter' => 'Auth']);
-$routes->add('ListeProducteur', 'Ajax/C_ajaxVin::utilisateursProducteur', ['filter'=>'Auth']);
-$routes->add('ConsulterNotesJury', 'Jury/C_consulterNotesJury', ['filter' => 'Auth']);
+$routes->add('SaisirNotes', 'Jury/C_saisirNotes::index', ['filter' => 'Auth']);
+$routes->add('ListeProducteur', 'Ajax/C_ajaxVin::utilisateursProducteur');
+$routes->add('ConsulterNotesJury', 'Jury/C_consulterNotesJury::index', ['filter' => 'Auth']);
 
 /*
  * --------------------------------------------------------------------
